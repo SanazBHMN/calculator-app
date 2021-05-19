@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: "Spartan", sans-serif;
+  font-weight: 700;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: hsl(222, 26%, 31%);
+  color: #fff;
+}
+
+.calculator-flex {
+  /* background: violet; */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 100vh;
+  padding: 1em;
+}
+
+.calculator-header {
+  /* background-color: yellow; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.theme-preference {
+  /* background-color: green; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.theme-preference h5 {
+  margin: 0 2em 0 0;
+}
+
+.claculator-grid {
+    /* background-color: orange; */
+    display: grid;
+    grid-gap: 15px;
+    grid-template-columns: 100%;
+    grid-template-rows: minmax(60px, auto) auto;
+    margin-top: 1.5em;
+    max-width: 100%;
+}
+
+.keypad-grid {
+    background: hsl(223, 31%, 20%);
+    padding: 20px;
+    border-radius: 10px;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    grid-gap: 10px;
+    grid-template-columns: repeat(4, 50px);
+    grid-template-rows: repeat(5, 50px);
+}
+
+.keypad-grid > button {
+    font-size: 1rem;
+    color: hsl(221, 14%, 31%);
+    cursor: pointer;
+    border-radius: 7px;
+    border: none;
+    box-shadow: 0 4px hsl(224, 28%, 35%);
+    background-color: hsl(30, 25%, 89%);
+}
+
+.span-two {
+    grid-column: span 2;
+}
+
+.output {
+    /* background: cyan; */
+    background-color: hsl(224, 36%, 15%);
+    grid-column: 1 / -1;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: end;
+}
+
+.keypad-grid .background-blue {
+    background: hsl(225, 21%, 49%);
+    color: #fff;
+}
+
+.keypad-grid .background-red {
+    background: hsl(6, 63%, 50%);
+    color: #fff;
+    box-shadow: 0 4px hsl(6, 70%, 34%);
+}
+
+@media screen and (max-width: 768px) {
+}
