@@ -1,67 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap");
 
-:root {
-  /* ---------------- theme-1 ---------------- */
-  /* backgrounds */
-  --theme1-main-background: hsl(222, 26%, 31%);
-  --theme1-toggle-keypad-background: hsl(223, 31%, 20%);
-  --theme1-screen-background: hsl(224, 36%, 15%);
-
-  /* keys */
-  --theme1-key-background: hsl(225, 21%, 49%);
-  --theme1-key-shadow: hsl(224, 28%, 35%);
-
-  --theme1-key-background-red: hsl(6, 63%, 50%);
-  --theme1-key-shadow-red: hsl(6, 70%, 34%);
-
-  --theme1-key-background-grey: hsl(30, 25%, 89%);
-  --theme1-key-shadow-grey: hsl(28, 16%, 65%);
-
-  /* text */
-  --theme1-text: hsl(221, 14%, 31%);
-  --theme1-text-white: #fff;
-
-  /* ---------------- theme-2 ---------------- */
-  /* backgrounds */
-  --theme2-main-background: hsl(0, 0%, 90%);
-  --theme2-toggle-keypad-background: hsl(0, 5%, 81%);
-  --theme2-screen-background: hsl(0, 0%, 93%);
-
-  /* keys */
-  --theme2-key-background: hsl(185, 42%, 37%);
-  --theme2-key-shadow: hsl(185, 58%, 25%);
-
-  --theme2-key-background-orange: hsl(25, 98%, 40%);
-  --theme2-key-shadow-orange: hsl(25, 99%, 27%);
-
-  --theme2-key-background-yellow: hsl(45, 7%, 89%);
-  --theme2-key-shadow-yellow: hsl(35, 11%, 61%);
-
-  /* text */
-  --theme2-text-yellow: hsl(60, 10%, 19%);
-
-  /* ---------------- theme-3 ---------------- */
-  /* backgrounds */
-  --theme3-main-background: hsl(268, 75%, 9%);
-  --theme3-toggle-keypad-background: hsl(268, 71%, 12%);
-  --theme3-screen-background: hsl(268, 71%, 12%);
-
-  /* keys */
-  --theme3-key-background: hsl(281, 89%, 26%);
-  --theme3-key-shadow: hsl(285, 91%, 52%);
-
-  --theme3-key-background-cyan: hsl(176, 100%, 44%);
-  --theme3-key-shadow-cyan: hsl(177, 92%, 70%);
-
-  --theme3-key-background-yellow: hsl(268, 47%, 21%);
-  --theme3-key-shadow-yellow: hsl(290, 70%, 36%);
-
-  /* text */
-  --theme3-text: hsl(52, 100%, 62%);
-  --theme3-text-blue: hsl(198, 20%, 13%);
-  --theme3-text-white: #fff;
-}
-
 *,
 *::before,
 *::after {
@@ -155,14 +93,14 @@ body.theme-1 {
 }
 
 .theme-1 .keypad-grid > button {
-  font-size: 1rem;
-  color: var(--theme1-text);
+  font-size: 1.2rem;
+  color: var(--theme1-text-blue);
   cursor: pointer;
   border-radius: 7px;
   border: none;
   outline: none;
-  box-shadow: 0 4px var(--theme1-key-shadow-grey);
-  background-color: var(--theme1-key-background-grey);
+  box-shadow: 0 4px var(--theme1-key-shadow-orange);
+  background-color: var(--theme1-key-background-orange);
 }
 
 .span-two {
@@ -179,8 +117,8 @@ body.theme-1 {
 }
 
 .theme-1 .keypad-grid .background-blue {
-  background: var(--theme1-key-background);
-  box-shadow: 0 4px var(--theme1-key-shadow);
+  background: var(--theme1-key-background-blue);
+  box-shadow: 0 4px var(--theme1-key-shadow-blue);
   color: var(--theme1-text-white);
 }
 
@@ -205,7 +143,7 @@ body.theme-2 {
 }
 
 .theme-2 .keypad-grid > button {
-  box-shadow: 0 4px var(--theme2-key-shadow-yellow);
+  box-shadow: 0 4px var(--theme2-key-shadow-orange);
   background-color: var(--theme2-key-background-yellow);
 }
 
@@ -214,48 +152,42 @@ body.theme-2 {
 }
 
 .theme-2 .keypad-grid .background-blue {
-  background: var(--theme2-key-background);
-  box-shadow: 0 4px var(--theme2-key-shadow);
+  background: var(--theme2-key-background-cyan);
+  box-shadow: 0 4px var(--theme2-key-shadow-cyan);
 }
 
 .theme-2 .keypad-grid .background-red {
   background: var(--theme2-key-background-orange);
-  box-shadow: 0 4px var(--theme2-key-shadow-orange);
+  box-shadow: 0 4px var(--theme2-key-shadow-dark-orange);
 }
 
 /* theme 3 styling */
 body.theme-3 {
   background: var(--theme3-main-background);
-  color: var(--theme3-text);
+  color: var(--theme3-text-yellow);
 }
 
-.theme-3 .theme-toggle {
-  background: var(--theme3-toggle-keypad-background);
-}
-
-.theme-3 .keypad-grid {
+.theme-3 .theme-toggle,
+.theme-3 .keypad-grid,
+.theme-3 .output {
   background: var(--theme3-toggle-keypad-background);
 }
 
 .theme-3 .keypad-grid > button {
-  box-shadow: 0 4px var(--theme3-key-shadow-yellow);
-  background-color: var(--theme3-key-background-yellow);
-  color: var(--theme3-text);
-}
-
-.theme-3 .output {
-  background-color: var(--theme3-screen-background);
+  box-shadow: 0 4px var(--theme3-key-shadow-dark-magenta);
+  background-color: var(--theme3-key-background-dark-violet);
+  color: var(--theme3-text-yellow);
 }
 
 .theme-3 .keypad-grid .background-blue {
-  background: var(--theme3-key-background);
-  box-shadow: 0 4px var(--theme3-key-shadow);
+  background: var(--theme3-key-shadow-dark-magenta);
+  box-shadow: 0 4px var(--theme3-key-shadow-magenta);
 }
 
 .theme-3 .keypad-grid .background-red {
   background: var(--theme3-key-background-cyan);
   box-shadow: 0 4px var(--theme3-key-shadow-cyan);
-  color: #000;
+  color: var(--theme3-text-blue);
 }
 
 @media screen and (max-width: 768px) {
