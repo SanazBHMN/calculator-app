@@ -1,0 +1,20 @@
+:root {
+    /* backgrounds */
+  --theme1-main-background: hsl(222, 26%, 31%);
+  --theme1-toggle-keypad-background: hsl(223, 31%, 20%);
+  --theme1-screen-background: hsl(224, 36%, 15%);
+
+  /* keys */
+  --theme1-key-background-blue: hsl(225, 21%, 49%);
+  --theme1-key-shadow-blue: hsl(224, 28%, 35%);
+
+  --theme1-key-background-red: hsl(6, 63%, 50%);
+  --theme1-key-shadow-red: hsl(6, 70%, 34%);
+
+  --theme1-key-background-orange: hsl(30, 25%, 89%);
+  --theme1-key-shadow-orange: hsl(28, 16%, 65%);
+
+  /* text */
+  --theme1-text-blue: hsl(221, 14%, 31%);
+  --theme1-text-white: #fff;
+}
