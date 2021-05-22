@@ -15,43 +15,49 @@
     <script src="script/script.js" defer></script>
     <title>Calculator app</title>
   </head>
-  <body>
-    <div class="calculator-flex">
-      <div class="calculator-header">
-        <h1>calc</h1>
-        <div class="theme-preference">
-          <h5>THEME</h5>
-          <div class="theme-toggle">
-            <input type="checkbox" checked />
+  <body class="theme-1">
+    <div class="container">
+      <div class="calculator-flex">
+        <div class="calculator-header">
+          <h1>calc</h1>
+          <div class="theme-preference">
+            <h5>THEME</h5>
+            <div class="theme-toggle">
+              <input id="first" name="toggle-state" type="radio" checked />
+
+              <input id="second" name="toggle-state" type="radio" />
+
+              <input id="third" name="toggle-state" type="radio" />
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="claculator-grid">
-        <div class="output">
-          <div class="previous-operand">12345+</div>
-          <div class="current-operand">258</div>
-        </div>
+        <div class="claculator-grid">
+          <div class="output">
+            <div class="previous-operand">12345+</div>
+            <div class="current-operand">258</div>
+          </div>
 
-        <div class="keypad-grid">
-          <button>7</button>
-          <button>8</button>
-          <button>9</button>
-          <button class="background-blue">DEL</button>
-          <button>4</button>
-          <button>5</button>
-          <button>6</button>
-          <button>+</button>
-          <button>1</button>
-          <button>2</button>
-          <button>3</button>
-          <button>-</button>
-          <button>.</button>
-          <button>0</button>
-          <button>/</button>
-          <button>x</button>
-          <button class="span-two background-blue">RESET</button>
-          <button class="span-two background-red">=</button>
+          <div class="keypad-grid">
+            <button>7</button>
+            <button>8</button>
+            <button>9</button>
+            <button class="background-blue">DEL</button>
+            <button>4</button>
+            <button>5</button>
+            <button>6</button>
+            <button>+</button>
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button>-</button>
+            <button>.</button>
+            <button>0</button>
+            <button>/</button>
+            <button>x</button>
+            <button class="span-two background-blue">RESET</button>
+            <button class="span-two background-red">=</button>
+          </div>
         </div>
       </div>
     </div>
