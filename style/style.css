@@ -25,9 +25,8 @@ body.theme-1 {
   /* background: violet; */
   display: flex;
   flex-direction: column;
-  justify-content: centerq2;
+  justify-content: center;
   align-items: center;
-  min-height: 100vh;
   padding: 1em;
 }
 
@@ -74,10 +73,9 @@ body.theme-1 {
   /* background-color: orange; */
   display: grid;
   grid-gap: 15px;
-  grid-template-columns: 100%;
-  grid-template-rows: minmax(60px, auto) auto;
-  margin-top: 1.5em;
-  max-width: 100%;
+  grid-template-columns: minmax(200px, 300px);
+  grid-template-rows: minmax(70px, auto) auto;
+  /* max-width: 100%; */
 }
 
 .theme-1 .keypad-grid {
@@ -96,7 +94,7 @@ body.theme-1 {
   font-size: 1.2rem;
   color: var(--theme1-text-blue);
   cursor: pointer;
-  border-radius: 7px;
+  border-radius: 4px;
   border: none;
   outline: none;
   box-shadow: 0 4px var(--theme1-key-shadow-orange);
@@ -107,13 +105,22 @@ body.theme-1 {
   grid-column: span 2;
 }
 
-.theme-1 .output {
+.output {
   /* background: cyan; */
   background-color: var(--theme1-screen-background);
   grid-column: 1 / -1;
   border-radius: 10px;
-  padding: 20px;
-  text-align: end;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-end;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.output .current-operand {
+  font-size: 1.5rem;
 }
 
 .theme-1 .keypad-grid .background-blue {
@@ -190,5 +197,15 @@ body.theme-3 {
   color: var(--theme3-text-blue);
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 768px) {
+  .claculator-grid {
+    grid-template-columns: 400px;
+    /* grid-template-rows: minmax(70px, auto) auto; */
+  }
+
+  .theme-1 .keypad-grid {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 40px);
+    grid-gap: 18px;
+  }
 }
