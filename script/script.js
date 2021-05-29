@@ -61,7 +61,12 @@ class Calculator {
   }
 
   delete() {
-    this.currentOperand = this.currentOperand.toString().slice(0, -1);
+    if (this.currentOperandTextElemenet.innerText === "Infinity") {
+      calculator.reset();
+    //   console.log("**");
+    } else {
+      this.currentOperand = this.currentOperand.toString().slice(0, -1);
+    }
   }
 
   appendNumber(number) {
@@ -158,15 +163,12 @@ deleteButton.addEventListener("click", (button) => {
   calculator.updateDisplay();
 });
 
-
 themes = {
-  "cyan": {
+  cyan: {
     "main-color": "cyan",
-    "accent-color": "red"
+    "accent-color": "red",
   },
-  "light": {
-
-  }
-}
+  light: {},
+};
 
 // DRY
