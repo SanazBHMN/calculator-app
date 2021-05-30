@@ -1,0 +1,36 @@
+body {
+  background: var(--main-background);
+  color: var(--text);
+}
+
+.theme-toggle,
+.keypad-grid {
+  background: var(--toggle-keypad-background);
+}
+
+/* .keypad-grid {
+  background: var(--theme1-toggle-keypad-background);
+} */
+
+.keypad-grid > button {
+  color: var(--text-neutral);
+  box-shadow: 0 4px var(--key-shadow-neutral);
+  background-color: var(--key-neutral);
+}
+
+.output {
+  background-color: var(--screen-background);
+}
+
+
+.keypad-grid .background-blue {
+  background: var(--key-primary-background);
+  box-shadow: 0 4px var(--key-primary-shadow);
+  color: var(--text);
+}
+
+.keypad-grid .background-red {
+  background: var(--key-accent);
+  box-shadow: 0 4px var(--key-accent-shadow);
+  color: var(--theme1-text-white);
+}
