@@ -4,45 +4,20 @@ var themeToggleFirst = document.querySelector("#first");
 var themeToggleSecond = document.querySelector("#second");
 var themeToggleThird = document.querySelector("#third");
 
+function changeTheme(themeName) {
+  document.getElementById("theme-css").href = `style/${themeName}`;
+}
+
 themeToggleFirst.addEventListener("click", () => {
-  // console.log("reset fired");
-  // calculator.reset();
-  // calculator.updateDisplay();
-  if (
-    body.classList.contains("theme-2") ||
-    body.classList.contains("theme-3")
-  ) {
-    // console.log('theme 1 fired')
-    body.classList.remove("theme-2");
-    body.classList.remove("theme-3");
-    body.classList.add("theme-1");
-  }
+  changeTheme("color-1.css");
 });
 
 themeToggleSecond.addEventListener("click", () => {
-  // console.log("reset fired");
-  // calculator.reset();
-  // calculator.updateDisplay();
-  if (
-    body.classList.contains("theme-1") ||
-    body.classList.contains("theme-3")
-  ) {
-    body.classList.remove("theme-3");
-    body.classList.add("theme-2");
-  }
+  changeTheme("color-2.css");
 });
 
 themeToggleThird.addEventListener("click", () => {
-  // calculator.reset();
-  // calculator.updateDisplay();
-  // console.log("reset fired");
-  if (
-    body.classList.contains("theme-1") ||
-    body.classList.contains("theme-2")
-  ) {
-    body.classList.remove("theme-2");
-    body.classList.add("theme-3");
-  }
+  changeTheme("color-3.css");
 });
 
 // build calculator
@@ -63,7 +38,7 @@ class Calculator {
   delete() {
     if (this.currentOperandTextElemenet.innerText === "Infinity") {
       calculator.reset();
-    //   console.log("**");
+      //   console.log("**");
     } else {
       this.currentOperand = this.currentOperand.toString().slice(0, -1);
     }
@@ -162,13 +137,3 @@ deleteButton.addEventListener("click", (button) => {
   calculator.delete();
   calculator.updateDisplay();
 });
-
-themes = {
-  cyan: {
-    "main-color": "cyan",
-    "accent-color": "red",
-  },
-  light: {},
-};
-
-// DRY
