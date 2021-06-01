@@ -29,16 +29,16 @@ class Calculator {
   }
 
   reset() {
-    console.log("reset function");
+    // console.log("reset function");
     this.currentOperand = "";
     this.previousOperand = "";
     this.operation = undefined;
+    operationDisplay.innerText = "";
   }
 
   delete() {
     if (this.currentOperandTextElemenet.innerText === "Infinity") {
       calculator.reset();
-      //   console.log("**");
     } else {
       this.currentOperand = this.currentOperand.toString().slice(0, -1);
     }
@@ -61,34 +61,57 @@ class Calculator {
   }
 
   compute() {
-    let computation;
+    let result;
     const prev = parseFloat(this.previousOperand);
     const current = parseFloat(this.currentOperand);
     if (isNaN(prev) || isNaN(current)) return;
     switch (this.operation) {
       case "+":
-        computation = prev + current;
+        result = prev + current;
         break;
       case "-":
-        computation = prev - current;
+        result = prev - current;
         break;
       case "x":
-        computation = prev * current;
+        result = prev * current;
         break;
       case "/":
-        computation = prev / current;
+        result = prev / current;
         break;
       default:
         return;
     }
-    this.currentOperand = computation;
-    this.operation = undefined;
+    this.currentOperand = result;
     this.previousOperand = "";
+    this.operation = undefined;
+    this.buttonDisplay = "";
   }
 
   updateDisplay() {
     this.currentOperandTextElemenet.innerText = this.currentOperand;
     this.previousOperandTextElemenet.innerText = this.previousOperand;
+  }
+
+  controlMemory(memoryType) {
+    switch (memoryType) {
+      case "MC":
+        console.log("MC");
+        sessionStorage.clear();
+        break;
+      case "MR":
+        console.log("MR");
+        this.currentOperandTextElemenet = sessionStorage.getItem("result");
+        break;
+      case "M+":
+        console.log("M+");
+        this.result += sessionStorage.setItem("result", this.currentOperand);
+        break;
+      case "M-":
+        console.log("M-");
+        break;
+      default:
+        return;
+    }
   }
 }
 
@@ -103,11 +126,19 @@ const previousOperandTextElemenet = document.querySelector(
 const currentOperandTextElemenet = document.querySelector(
   "[data-current-operand]"
 );
+const memoryButtons = document.querySelectorAll("[data-memory]");
+const operationDisplay = document.getElementById("operation");
 
 const calculator = new Calculator(
   previousOperandTextElemenet,
   currentOperandTextElemenet
 );
+
+memoryButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    calculator.controlMemory(button.innerText);
+  });
+});
 
 numberButtons.forEach((button) => {
   button.addEventListener("click", () => {
@@ -119,12 +150,14 @@ numberButtons.forEach((button) => {
 operationButtons.forEach((button) => {
   button.addEventListener("click", () => {
     calculator.chooseOperation(button.innerText);
+    operationDisplay.innerText = button.innerText;
     calculator.updateDisplay();
   });
 });
 
 equalsButton.addEventListener("click", (button) => {
   calculator.compute();
+  operationDisplay.innerText = "";
   calculator.updateDisplay();
 });
 

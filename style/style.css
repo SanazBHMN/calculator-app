@@ -78,8 +78,8 @@ body {
   justify-content: center;
   align-content: center;
   grid-gap: 10px;
-  grid-template-columns: repeat(4, 50px);
-  grid-template-rows: repeat(5, 50px);
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(6, 50px);
 }
 
 .keypad-grid > button {
@@ -118,7 +118,7 @@ body {
 
   .theme-1 .keypad-grid {
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(5, 40px);
+    /* grid-template-rows: repeat(6, 40px); */
     grid-gap: 18px;
   }
 }
