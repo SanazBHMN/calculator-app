@@ -32,6 +32,7 @@ body {
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  position: relative;
 }
 
 .theme-preference {
@@ -50,17 +51,34 @@ body {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  position: relative;
+  /* position: relative; */
 }
 
 .theme-toggle > input {
   margin: 0.3em;
 }
 
-.theme-toggle::before {
+/* .theme-toggle::before {
   content: "1 2 3";
   position: absolute;
   bottom: 25px;
+} */
+
+.theme-number {
+  position: absolute;
+  bottom: 50px;
+  right: 0;
+}
+
+.theme-number ol {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+ol li {
+  padding: 6px;
 }
 
 .claculator-grid {
