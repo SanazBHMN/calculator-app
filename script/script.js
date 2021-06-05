@@ -49,12 +49,12 @@ class Calculator {
     this.currentOperand = this.currentOperand.toString() + number.toString();
   }
 
-  chooseOperation(operation) {
+  chooseOperation() {
     if (this.currentOperand === "") return;
     if (this.previousOperand !== "") {
       this.compute();
     }
-    this.operation = operation;
+    // this.operation = operation;
     // debugger;
     this.previousOperand = this.currentOperand;
     this.currentOperand = "";
@@ -171,7 +171,7 @@ numberButtons.forEach((button) => {
 
 operationButtons.forEach((button) => {
   button.addEventListener("click", () => {
-    calculator.chooseOperation(button.innerText);
+    calculator.chooseOperation();
     operationDisplay.innerText = button.innerText;
     calculator.updateDisplay();
   });
