@@ -100,27 +100,35 @@ class Calculator {
       case "MC":
         console.log("MC");
         sessionStorage.clear();
-        this.currentOperandTextElemenet.innerText = "Memory Cleared";
         break;
+
       case "MR":
         console.log("MR");
         this.currentOperandTextElemenet.innerText =
           sessionStorage.getItem("sessionValue");
         break;
+
       case "M+":
-        console.log("M+");
         if (sessionStorage.getItem("sessionValue") === null) {
           sessionStorage.setItem("sessionValue", this.currentOperand);
         } else {
-          prevValue = parseInt(sessionStorage.getItem("sessionValue"));
-          currValue = parseInt(this.currentOperand);
+          prevValue = parseFloat(sessionStorage.getItem("sessionValue"));
+          currValue = parseFloat(this.currentOperand);
           result = prevValue + currValue;
           // debugger;
           sessionStorage.setItem("sessionValue", result);
         }
         break;
+
       case "M-":
-        console.log("M-");
+        if (sessionStorage.getItem("sessionValue") === null) {
+          sessionStorage.setItem('sessionValue', this.currentOperand);
+        } else {
+          prevValue = parseFloat(sessionStorage.getItem("sessionValue"));
+          currValue = parseFloat(this.currentOperand);
+          result = prevValue - currValue;
+          sessionStorage.setItem("sessionValue", result);
+        }
         break;
       default:
         return;
