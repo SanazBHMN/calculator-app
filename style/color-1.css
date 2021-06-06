@@ -15,7 +15,8 @@
     --key-shadow-neutral: hsl(28, 16%, 65%);
   
     /* text */
-    --text-neutral: hsl(221, 14%, 31%);
-    --text: #fff;
+    /* --text-neutral: hsl(221, 14%, 31%); */
+    --text-neutral: #fff;
+    --text: hsl(221, 14%, 31%);
   
 }

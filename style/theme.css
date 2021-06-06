@@ -1,6 +1,6 @@
 body {
   background: var(--main-background);
-  color: var(--text);
+  color: var(--text-neutral);
 }
 
 .theme-toggle,
@@ -8,12 +8,12 @@ body {
   background: var(--toggle-keypad-background);
 }
 
-/* .keypad-grid {
-  background: var(--theme1-toggle-keypad-background);
-} */
+.checkmark {
+  background-color: var(--key-accent);
+}
 
 .keypad-grid > button {
-  color: var(--text-neutral);
+  color: var(--text);
   box-shadow: 0 4px var(--key-shadow-neutral);
   background-color: var(--key-neutral);
 }
@@ -26,11 +26,11 @@ body {
 .keypad-grid .background-blue {
   background: var(--key-primary-background);
   box-shadow: 0 4px var(--key-primary-shadow);
-  color: var(--text);
+  color: var(--text-neutral);
 }
 
 .keypad-grid .background-red {
   background: var(--key-accent);
   box-shadow: 0 4px var(--key-accent-shadow);
-  color: var(--theme1-text-white);
+  color: var(--text);
 }

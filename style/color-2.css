@@ -16,6 +16,6 @@
 
   /* text */
   --text-neutral: hsl(60, 10%, 19%);
-  --text: #fff;
+  --text: hsl(60, 10%, 19%);
 
 }
