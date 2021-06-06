@@ -91,20 +91,33 @@ class Calculator {
     this.currentOperandTextElemenet.innerText = this.currentOperand;
     this.previousOperandTextElemenet.innerText = this.previousOperand;
   }
-
   controlMemory(memoryType) {
+    // debugger;
+    let prevValue;
+    let currValue;
+    let result;
     switch (memoryType) {
       case "MC":
         console.log("MC");
         sessionStorage.clear();
+        this.currentOperandTextElemenet.innerText = "Memory Cleared";
         break;
       case "MR":
         console.log("MR");
-        this.currentOperandTextElemenet = sessionStorage.getItem("result");
+        this.currentOperandTextElemenet.innerText =
+          sessionStorage.getItem("sessionValue");
         break;
       case "M+":
         console.log("M+");
-        this.result += sessionStorage.setItem("result", this.currentOperand);
+        if (sessionStorage.getItem("sessionValue") === null) {
+          sessionStorage.setItem("sessionValue", this.currentOperand);
+        } else {
+          prevValue = parseInt(sessionStorage.getItem("sessionValue"));
+          currValue = parseInt(this.currentOperand);
+          result = prevValue + currValue;
+          // debugger;
+          sessionStorage.setItem("sessionValue", result);
+        }
         break;
       case "M-":
         console.log("M-");
