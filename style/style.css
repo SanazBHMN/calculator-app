@@ -47,7 +47,7 @@ body {
 
 .theme-toggle {
   border-radius: 20px;
-  padding: 1px 3px;
+  padding: 0 3px;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -56,6 +56,38 @@ body {
 
 .theme-toggle > input {
   margin: 0.3em;
+}
+
+.custom-radio-btn {
+  width: 20px;
+  height: 20px;
+  /* border: 2px solid #fff; */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.custom-radio-btn .checkmark {
+  width: calc(100% - 6px);
+  height: calc(100% - 6px);
+  border-radius: 50%;
+  background-color: red;
+  display: inline-block;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.custom-radio-btn input {
+  display: none;
+}
+
+.custom-radio-btn input:checked + .checkmark {
+  opacity: 1;
+}
+
+.checkmark {
+  cursor: pointer;
 }
 
 /* .theme-toggle::before {
